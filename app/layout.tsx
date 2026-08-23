@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Ubuntu, Cascadia_Code } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ubuntu = Ubuntu({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ubuntu",
+  weight: "700",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cascadiaCode = Cascadia_Code({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cascadia-code",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${ubuntu.variable} ${cascadiaCode.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
         <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
