@@ -7,7 +7,7 @@ import Contact from "@/components/home/Contact";
 export default function Home() {
   return (
     <>
-      <section className="flex min-h-[calc(100svh-3.5rem)] flex-col items-center justify-center space-y-4 px-6 text-center">
+      <section className="flex min-h-[100svh] flex-col items-center justify-center space-y-4 px-6 pt-[6rem] text-center">
         <h1 className="sr-only">Christian Esguerra</h1>
         <WarpHeading />
         <p className="text-base text-zinc-400 sm:text-lg">

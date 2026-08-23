@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu, Cascadia_Code } from "next/font/google";
-import Link from "next/link";
+import StaggeredMenu from "@/components/StaggeredMenu";
 import "./globals.css";
 
 const ubuntu = Ubuntu({
@@ -26,36 +26,28 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const menuItems = [
+    { label: "Home", link: "/" },
+    { label: "About", link: "/about" },
+    { label: "Blog", link: "/blog" },
+    { label: "Contact", link: "#contact" },
+  ];
+
   return (
     <html
       lang="en"
       className={`dark ${ubuntu.variable} ${cascadiaCode.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
-        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-          <nav className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-            <Link
-              href="/"
-              className="text-sm font-semibold tracking-tight hover:text-zinc-600 dark:hover:text-zinc-300"
-            >
-              Christian Esguerra
-            </Link>
-            <div className="flex items-center gap-6 text-sm">
-              <Link
-                href="/"
-                className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-              >
-                Home
-              </Link>
-              <Link
-                href="/blog"
-                className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-              >
-                Blog
-              </Link>
-            </div>
-          </nav>
-        </header>
+        <StaggeredMenu
+          isFixed
+          position="right"
+          items={menuItems}
+          colors={["#4c1d95", "#2e1065"]}
+          accentColor="#a78bfa"
+          displaySocials={false}
+          displayItemNumbering={true}
+        />
         <main className="flex-1">{children}</main>
         <footer className="border-t border-zinc-200 py-8 dark:border-zinc-800">
           <p className="mx-auto max-w-3xl px-6 text-center text-xs text-zinc-500 dark:text-zinc-400">

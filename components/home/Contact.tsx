@@ -100,7 +100,7 @@ function ContactButton({ label, email }: ContactButtonProps) {
 
 export default function Contact() {
   return (
-    <section className="border-t border-zinc-800/60 py-16 sm:py-20 text-center">
+    <section className="border-t border-zinc-800/60 py-16 sm:py-20 text-center" id="contact">
       <h2 className="font-heading text-2xl font-bold tracking-tight">
         Get in touch
       </h2>
