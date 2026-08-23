@@ -1,4 +1,5 @@
 import WarpHeading from "@/components/WarpHeading";
+import HomeGradualBlur from "@/components/home/HomeGradualBlur";
 import Intro from "@/components/home/Intro";
 import TechStack from "@/components/home/TechStack";
 import Projects from "@/components/home/Projects";
@@ -27,6 +28,7 @@ export default function Home() {
         <Projects />
         <Contact />
       </div>
+      <HomeGradualBlur />
     </>
   );
 }

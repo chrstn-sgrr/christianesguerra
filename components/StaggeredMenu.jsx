@@ -3,6 +3,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import "./StaggeredMenu.css";
 
 const reduceMotion = () =>
@@ -359,16 +360,23 @@ export const StaggeredMenu = ({
     };
   }, [closeOnClickAway, open, closeMenu]);
 
+  const router = useRouter();
+
   const handleItemClick = useCallback(
     (e, item) => {
       if (!item.link || typeof item.link !== "string" || !item.link.startsWith("#")) return;
       e.preventDefault();
       const targetId = item.link.slice(1);
       const target = document.getElementById(targetId);
-      if (target) target.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth" });
+      if (target) {
+        target.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth" });
+        closeMenu();
+        return;
+      }
       closeMenu();
+      router.push(`/${item.link}`);
     },
-    [closeMenu]
+    [closeMenu, router]
   );
 
   return (
