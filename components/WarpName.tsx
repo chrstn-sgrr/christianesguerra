@@ -10,10 +10,11 @@ export default function WarpName({ text }: WarpNameProps) {
       text={text}
       color="#f4f4f5"
       fontFamily="var(--font-ubuntu), Ubuntu, sans-serif"
-      fontSize="clamp(3rem, 8vw, 6.5rem)"
+      fontSize="clamp(3.25rem, 9vw, 7.5rem)"
       fontWeight={700}
       letterSpacing="-0.03em"
-      style={{ height: "clamp(150px, 30vw, 360px)" }}
+      style={{ height: "clamp(100px, 18vw, 280px)" }}
+      maxWidthFactor={1}
     />
   );
 }

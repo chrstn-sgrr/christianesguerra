@@ -1,11 +1,21 @@
 .quote-reveal {
-  max-width: 42rem;
-  margin-top: 1.5rem;
+  max-width: min(42rem, 100%);
+  margin-top: 2rem;
   margin-inline: auto;
   color: #a1a1aa;
   font-size: 1.125rem;
   line-height: 1.7;
   text-align: center;
+}
+
+.quote-reveal.align-left {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.quote-reveal.align-right {
+  text-align: right;
+  margin-inline: 0;
 }
 
 .quote-word {

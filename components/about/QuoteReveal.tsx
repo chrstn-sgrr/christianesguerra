@@ -5,9 +5,10 @@ import "./QuoteReveal.css";
 
 type QuoteRevealProps = {
   quote: string;
+  align?: "left" | "center" | "right";
 };
 
-export default function QuoteReveal({ quote }: QuoteRevealProps) {
+export default function QuoteReveal({ quote, align = "center" }: QuoteRevealProps) {
   const quoteRef = useRef<HTMLQuoteElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const words = quote.split(/\s+/);
@@ -42,7 +43,7 @@ export default function QuoteReveal({ quote }: QuoteRevealProps) {
   return (
     <blockquote
       ref={quoteRef}
-      className={`quote-reveal${isVisible ? " quote-reveal-visible" : ""}`}
+      className={`quote-reveal${isVisible ? " quote-reveal-visible" : ""} ${align === "left" ? "align-left" : align === "right" ? "align-right" : ""}`}
     >
       <span className="quote-word quote-mark" aria-hidden="true">
         “

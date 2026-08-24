@@ -27,42 +27,48 @@ export default function AboutPage() {
       <Timeline />
 
       <section className="mt-32">
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+          <h2 className="font-heading text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl scroll-mt-[8rem] pb-8">
             Inspirations
           </h2>
         </section>
 
-        <section className="mt-16 text-center md:w-3/5 relative">
-          <Image
-            src="/images/about/linus-torvalds.jpg"
-            alt=""
-            fill
-            sizes="(min-width: 768px) 60vw, 100vw"
-            className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
-            aria-hidden
-          />
-          <div className="relative z-10">
+        <section className="mt-64 md:w-3/5 md:text-left relative">
+          <div className="absolute -inset-x-[10%] -top-[55%] -bottom-[6%]">
+            <Image
+              src="/images/about/linus-torvalds.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
+              aria-hidden
+            />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950/70 to-transparent" />
+          </div>
+          <div className="relative z-10 pt-4">
             <h3 className="sr-only">Linus Torvalds</h3>
             <WarpName text="Linus Torvalds" />
-            <p className="text-sm text-zinc-500">Creator of Linux and Git</p>
-            <QuoteReveal quote="I saw it as a solution to my problems." />
+            <p className="mt-4 text-sm text-zinc-500">Creator of Linux and Git</p>
+            <QuoteReveal quote="I saw it as a solution to my problems." align="left" />
           </div>
         </section>
 
-        <section className="mt-40 text-center sm:mt-56 md:ml-auto md:w-3/5 relative">
-          <Image
-            src="/images/about/terry-davis.jpg"
-            alt=""
-            fill
-            sizes="(min-width: 768px) 60vw, 100vw"
-            className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
-            aria-hidden
-          />
-          <div className="relative z-10">
+        <section className="mt-64 md:ml-auto md:w-3/5 md:text-right relative">
+          <div className="absolute -inset-x-[10%] -top-[55%] -bottom-[6%]">
+            <Image
+              src="/images/about/terry-davis.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
+              aria-hidden
+            />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950/70 to-transparent" />
+          </div>
+          <div className="relative z-10 pt-4">
             <h3 className="sr-only">Terry Davis</h3>
             <WarpName text="Terry Davis" />
-            <p className="text-sm text-zinc-500">1969 - 2018</p>
-            <QuoteReveal quote="An idiot admires complexity, a genius admires simplicity." />
+            <p className="mt-4 text-sm text-zinc-500">1969 - 2018</p>
+            <QuoteReveal quote="An idiot admires complexity, a genius admires simplicity." align="right" />
           </div>
         </section>
 
@@ -71,9 +77,9 @@ export default function AboutPage() {
             Salvatore Sanfilippo
           </h3>
           <p className="mt-6 max-w-[65ch] leading-relaxed text-zinc-300">
-            Similar to Linus with Git and Linux, some projects and tools are not
-            built to impress the world. They are built to solve problems based
-            on what is actually needed.
+            Similar to Linus with Git and Linux, reading about the creator of Redis made me realize that
+            some projects and tools are not built to impress the world.
+            They are built to solve problems based on what is needed.
           </p>
         </section>
 
@@ -82,8 +88,8 @@ export default function AboutPage() {
             David Heinemeier Hansson (a.k.a. DHH)
           </h3>
           <p className="mt-6 max-w-[65ch] leading-relaxed text-zinc-300">
-            Never forget to be enthusiastic in the world of Programming. Have
-            some fun, be joyous, be unapologetically enthusiastic about the new,
+            After watching lots of content from DHH, what I learned from him is to never forget to be enthusiastic in the world of Programming.
+            Have some fun, be joyous, be unapologetically enthusiastic about the new,
             current, and future technology.
           </p>
         </section>

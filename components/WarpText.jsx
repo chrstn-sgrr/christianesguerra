@@ -179,7 +179,7 @@ const buildTextCanvas = ({ container, width, height, dpr, props }) => {
   };
   applyFont();
 
-  const maxWidth = width * 0.86;
+  const maxWidth = width * (props.maxWidthFactor ?? 0.86);
   const maxHeight = height * 0.78;
   const widest = Math.max(...lines.map(line => measureLine(ctx, line, letterSpacing)), 1);
   const blockHeight = Math.max(lineHeight * lines.length, 1);
@@ -224,6 +224,7 @@ const WarpText = ({
   fontFamily = "inherit",
   letterSpacing = "-0.06em",
   lineHeight = 0.9,
+  maxWidthFactor = 0.86,
   className = "",
   style
 }) => {
@@ -255,6 +256,7 @@ const WarpText = ({
       fontFamily,
       letterSpacing,
       lineHeight,
+      maxWidthFactor,
       warpStrength,
       warpScale,
       speed,
@@ -276,9 +278,9 @@ const WarpText = ({
     fontFamily,
     letterSpacing,
     lineHeight,
+    maxWidthFactor,
     warpStrength,
     warpScale,
-    speed,
     pointerInfluence,
     pointerStrength,
     refraction,
