@@ -46,7 +46,7 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10 pt-4">
             <h3 className="sr-only">Linus Torvalds</h3>
-            <WarpName text="Linus Torvalds" />
+            <WarpName text="Linus Torvalds" fitGroup="inspirations" />
             <p className="mt-4 text-sm text-zinc-500">Creator of Linux and Git</p>
             <QuoteReveal quote="I saw it as a solution to my problems." align="left" />
           </div>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10 pt-4">
             <h3 className="sr-only">Terry Davis</h3>
-            <WarpName text="Terry Davis" />
+            <WarpName text="Terry Davis" fitGroup="inspirations" />
             <p className="mt-4 text-sm text-zinc-500">1969 - 2018</p>
             <QuoteReveal quote="An idiot admires complexity, a genius admires simplicity." align="right" />
           </div>

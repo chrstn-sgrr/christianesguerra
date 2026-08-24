@@ -181,9 +181,30 @@ const buildTextCanvas = ({ container, width, height, dpr, props }) => {
 
   const maxWidth = width * (props.maxWidthFactor ?? 0.86);
   const maxHeight = height * 0.78;
-  const widest = Math.max(...lines.map(line => measureLine(ctx, line, letterSpacing)), 1);
+  
+  // Group-based sizing: if fitGroup is provided, use group's max width for fitting
+  const group = props.fitGroup;
+  let groupMaxWidth = 0;
+  if (group) {
+    // Measure this text's width
+    let thisWidest = Math.max(...lines.map(line => measureLine(ctx, line, letterSpacing)), 1);
+    // Update group max
+    const currentMax = fitGroupWidths.get(group) || 0;
+    if (thisWidest > currentMax) {
+      fitGroupWidths.set(group, thisWidest);
+      groupMaxWidth = thisWidest;
+    } else {
+      groupMaxWidth = currentMax;
+    }
+    // If group max is not yet set (first render), use this width
+    if (groupMaxWidth === 0) {
+      groupMaxWidth = thisWidest;
+    }
+  }
+
+  const effectiveWidest = group && groupMaxWidth ? groupMaxWidth : Math.max(...lines.map(line => measureLine(ctx, line, letterSpacing)), 1);
   const blockHeight = Math.max(lineHeight * lines.length, 1);
-  const fit = Math.min(1, maxWidth / widest, maxHeight / blockHeight);
+  const fit = Math.min(1, maxWidth / effectiveWidest, maxHeight / blockHeight);
 
   if (fit < 1) {
     fontSizePx *= fit;
@@ -197,6 +218,8 @@ const buildTextCanvas = ({ container, width, height, dpr, props }) => {
 
   return canvas;
 };
+
+const fitGroupWidths = new Map();
 
 const syncUniforms = (program, props) => {
   const uniforms = program.uniforms;
@@ -225,6 +248,7 @@ const WarpText = ({
   letterSpacing = "-0.06em",
   lineHeight = 0.9,
   maxWidthFactor = 0.86,
+  fitGroup = "",
   className = "",
   style
 }) => {
@@ -257,6 +281,7 @@ const WarpText = ({
       letterSpacing,
       lineHeight,
       maxWidthFactor,
+      fitGroup,
       warpStrength,
       warpScale,
       speed,
@@ -279,6 +304,7 @@ const WarpText = ({
     letterSpacing,
     lineHeight,
     maxWidthFactor,
+    fitGroup,
     warpStrength,
     warpScale,
     pointerInfluence,

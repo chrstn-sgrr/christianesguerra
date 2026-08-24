@@ -2,9 +2,10 @@ import WarpText from "@/components/WarpText";
 
 type WarpNameProps = {
   text: string;
+  fitGroup?: string;
 };
 
-export default function WarpName({ text }: WarpNameProps) {
+export default function WarpName({ text, fitGroup }: WarpNameProps) {
   return (
     <WarpText
       text={text}
@@ -15,6 +16,7 @@ export default function WarpName({ text }: WarpNameProps) {
       letterSpacing="-0.03em"
       style={{ height: "clamp(100px, 18vw, 280px)" }}
       maxWidthFactor={1}
+      fitGroup={fitGroup}
     />
   );
 }
