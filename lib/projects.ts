@@ -6,31 +6,33 @@ export type Project = {
   repo?: string;
 };
 
-// Placeholder entries - replace titles, descriptions, stack, and links
-// with real project data.
 export const projects: Project[] = [
   {
-    title: "Project 1",
-    description:
-      "One or two sentences on what it does and the problem it solves.",
-    stack: ["Python", "PostgreSQL", "AWS"],
+    title: "AttendEase",
+    description: "Attendance via Computer Vision in Classrooms",
+    stack: ["Python", "React", "Node.js", "Flask", "OpenCV", "NumPy"],
   },
   {
-    title: "Project 2",
-    description:
-      "One or two sentences on what it does and the problem it solves.",
-    stack: ["Go", "Docker", "Azure"],
+    title: "Capitol Booking System",
+    description: "Simple Modernized Booking System for Capitol Restaurant",
+    stack: ["React", "Flask", "Supabase"],
   },
   {
-    title: "Project 3",
+    title: "NoteTakrr",
     description:
-      "One or two sentences on what it does and the problem it solves.",
-    stack: ["React", "Supabase"],
+      "A web app that processes student notes (text, images, PDFs) and generates structured study materials using AI.",
+    stack: ["React", "FastAPI", "OpenAI SDK", "Supabase"],
   },
   {
-    title: "Project 4",
+    title: "webshooter",
     description:
-      "One or two sentences on what it does and the problem it solves.",
-    stack: ["Java", "Spring Boot", "MySQL"],
+      'CLI tool that grabs any file from anywhere into current directory via "thwip"',
+    stack: ["Go"],
+  },
+  {
+    title: "a-friggin-weather-app",
+    description:
+      "Your regular old weather forecast app because I got tired checking Google every time",
+    stack: ["React", "Tailwind"],
   },
 ];

@@ -3,6 +3,7 @@ import HomeGradualBlur from "@/components/home/HomeGradualBlur";
 import Intro from "@/components/home/Intro";
 import TechStack from "@/components/home/TechStack";
 import Projects from "@/components/home/Projects";
+import Education from "@/components/home/Education";
 import Contact from "@/components/home/Contact";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <Intro />
         <TechStack />
         <Projects />
+        <Education />
         <Contact />
       </div>
       <HomeGradualBlur />
