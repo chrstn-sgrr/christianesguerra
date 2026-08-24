@@ -46,8 +46,10 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10 pt-4">
             <h3 className="sr-only">Linus Torvalds</h3>
-            <WarpName text="Linus Torvalds" fitGroup="inspirations" />
-            <p className="mt-4 text-sm text-zinc-500">Creator of Linux and Git</p>
+            <div className="translate-y-12 md:translate-y-16">
+              <WarpName text="Linus Torvalds" fitGroup="inspirations" />
+            </div>
+            <p className="mt-2 text-sm text-zinc-500">Creator of Linux and Git</p>
             <QuoteReveal quote="I saw it as a solution to my problems." align="left" />
           </div>
         </section>
@@ -66,8 +68,13 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10 pt-4">
             <h3 className="sr-only">Terry Davis</h3>
-            <WarpName text="Terry Davis" fitGroup="inspirations" />
-            <p className="mt-4 text-sm text-zinc-500">1969 - 2018</p>
+            <div className="translate-y-12 md:translate-y-16">
+              <WarpName text="Terry Davis" fitGroup="inspirations" />
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+              <span className="block">Creator of TempleOS and HolyC</span>
+              <span className="block">1969 - 2018</span>
+            </p>
             <QuoteReveal quote="An idiot admires complexity, a genius admires simplicity." align="right" />
           </div>
         </section>
@@ -76,6 +83,7 @@ export default function AboutPage() {
           <h3 className="font-heading text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">
             Salvatore Sanfilippo
           </h3>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-500">Creator of Redis</p>
           <p className="mt-6 max-w-[65ch] leading-relaxed text-zinc-300">
             Similar to Linus with Git and Linux, reading about the creator of Redis made me realize that
             some projects and tools are not built to impress the world.
@@ -87,6 +95,9 @@ export default function AboutPage() {
           <h3 className="font-heading text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">
             David Heinemeier Hansson (a.k.a. DHH)
           </h3>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+            Creator of Ruby on Rails, Omarchy, Co-owner of 37signals, Shopify Board Member
+          </p>
           <p className="mt-6 max-w-[65ch] leading-relaxed text-zinc-300">
             After watching lots of content from DHH, what I learned from him is to never forget to be enthusiastic in the world of Programming.
             Have some fun, be joyous, be unapologetically enthusiastic about the new,
