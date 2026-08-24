@@ -39,7 +39,7 @@ export default function AboutPage() {
               alt=""
               fill
               sizes="(min-width: 768px) 60vw, 100vw"
-              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
+              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] md:object-[35%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
               aria-hidden
             />
             <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950/70 to-transparent" />
@@ -53,13 +53,13 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-64 md:ml-auto md:w-3/5 md:text-right relative">
-          <div className="absolute -inset-x-[10%] -top-[55%] -bottom-[6%]">
+          <div className="absolute -inset-x-[10%] -top-[55%] -bottom-[6%] md:-inset-x-[7%] md:-top-[46%] md:-bottom-[3%]">
             <Image
               src="/images/about/terry-davis.jpg"
               alt=""
               fill
               sizes="(min-width: 768px) 60vw, 100vw"
-              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
+              className="pointer-events-none select-none object-cover opacity-[0.18] grayscale object-[50%_18%] md:object-[50%_28%] [mask-image:radial-gradient(120%_90%_at_50%_25%,black_35%,transparent_75%)]"
               aria-hidden
             />
             <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-zinc-950/70 to-transparent" />
