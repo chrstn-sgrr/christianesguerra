@@ -1,0 +1,35 @@
+.quote-reveal {
+  max-width: 42rem;
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  color: #a1a1aa;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.quote-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.65em);
+  transition:
+    opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quote-reveal-visible .quote-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-mark {
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-word {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
