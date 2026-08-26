@@ -1,48 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
-const SCRAMBLE_CHARS = "!<>-_\\/[]{}=+*^?#";
-
-function useScramble(target: string): string {
-  const [text, setText] = useState(target);
-  const textRef = useRef(target);
-  const rafRef = useRef<number | undefined>(undefined);
-
-  useEffect(() => {
-    if (
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ||
-      textRef.current === target
-    ) {
-      textRef.current = target;
-      setText(target);
-      return;
-    }
-
-    const start = performance.now();
-    const duration = 500;
-
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - start) / duration);
-      const solvedCount = Math.floor(p * target.length);
-      let next = "";
-      for (let i = 0; i < target.length; i++) {
-        next +=
-          i < solvedCount || target[i] === " "
-            ? target[i]
-            : SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-      }
-      textRef.current = next;
-      setText(next);
-      if (p < 1) rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current!);
-  }, [target]);
-
-  return text;
-}
+import { useScramble } from "./useScramble";
 
 type ContactButtonProps = {
   label: string;
@@ -117,6 +77,23 @@ export default function Contact() {
           email="apcciesguerra2@student.apc.edu.ph"
         />
       </div>
+      <a
+        href="https://www.linkedin.com/in/christian-esguerra-bscs/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+        aria-label="LinkedIn"
+      >
+        <Image
+          src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/linkedin-light.svg"
+          alt=""
+          width={16}
+          height={16}
+          unoptimized
+          aria-hidden
+        />
+        <span>LinkedIn</span>
+      </a>
     </section>
   );
 }

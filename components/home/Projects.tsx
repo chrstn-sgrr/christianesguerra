@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { projects, type Project } from "@/lib/projects";
 
 function ProjectEntry({ project }: { project: Project }) {
@@ -50,9 +51,47 @@ function ProjectEntry({ project }: { project: Project }) {
 export default function Projects() {
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20">
-      <h2 className="font-heading text-2xl font-bold tracking-tight">
-        Projects
-      </h2>
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10">
+        <h2 className="font-heading text-2xl font-bold tracking-tight">
+          Projects
+        </h2>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://github.com/chrstn-sgrr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+            aria-label="GitHub"
+          >
+            <Image
+              src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
+              alt=""
+              width={16}
+              height={16}
+              unoptimized
+              aria-hidden
+            />
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://github.com/apcciesguerra"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+            aria-label="School GitHub"
+          >
+            <Image
+              src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
+              alt=""
+              width={16}
+              height={16}
+              unoptimized
+              aria-hidden
+            />
+            <span>School GitHub</span>
+          </a>
+        </div>
+      </div>
       <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectEntry key={project.title} project={project} />
