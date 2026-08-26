@@ -20,7 +20,7 @@ export default function Home() {
           <ContactCta />
         </div>
       </section>
-      <div className="mx-auto max-w-3xl px-6 pb-8">
+      <div className="mx-auto max-w-4xl px-6 pb-8">
         <TechStack />
         <Projects />
         <Education />

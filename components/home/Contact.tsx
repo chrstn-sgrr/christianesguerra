@@ -51,7 +51,7 @@ function ContactButton({ label, email }: ContactButtonProps) {
       onFocus={() => setRevealed(true)}
       onBlur={hide}
       aria-label={`${label}: ${email}. Click to copy.`}
-      className="rounded-full border border-zinc-800 px-6 py-3 text-sm text-zinc-300 transition-colors hover:border-zinc-600 hover:text-zinc-100 active:scale-[0.98]"
+      className="rounded-full border border-zinc-800 px-6 py-3 md:px-7 md:py-3.5 text-sm md:text-base text-zinc-300 transition-colors hover:border-zinc-600 hover:text-zinc-100 active:scale-[0.98]"
     >
       {buttonText}
     </button>
@@ -61,10 +61,10 @@ function ContactButton({ label, email }: ContactButtonProps) {
 export default function Contact() {
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20 text-center" id="contact">
-      <h2 className="font-heading text-2xl font-bold tracking-tight">
+      <h2 className="font-heading text-2xl md:text-3xl font-bold tracking-tight">
         Get in touch
       </h2>
-      <p className="mt-3 text-sm text-zinc-500">
+      <p className="mt-3 text-sm md:text-base text-zinc-500">
         Reach me at either address! (Click to Copy)
       </p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -81,14 +81,15 @@ export default function Contact() {
         href="https://www.linkedin.com/in/christian-esguerra-bscs/"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+        className="mt-6 inline-flex items-center gap-2 text-lg md:text-xl text-zinc-400 hover:text-zinc-100 transition-colors"
         aria-label="LinkedIn"
       >
         <Image
           src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/linkedin-light.svg"
           alt=""
-          width={16}
-          height={16}
+          width={20}
+          height={20}
+          className="md:size-[22px]"
           unoptimized
           aria-hidden
         />

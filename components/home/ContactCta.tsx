@@ -32,7 +32,7 @@ export default function ContactCta() {
       onFocus={() => setRevealed(true)}
       onBlur={hide}
       aria-label={revealed ? "Contact Me" : "Open to internships"}
-      className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-4 py-1.5 text-sm text-zinc-400 transition-colors hover:border-zinc-600 hover:text-zinc-100 active:scale-[0.98]"
+      className="inline-flex items-center gap-2 rounded-full border border-zinc-800 px-4 py-1.5 md:px-5 md:py-2 text-sm md:text-base text-zinc-400 transition-colors hover:border-zinc-600 hover:text-zinc-100 active:scale-[0.98]"
     >
       <span
         className="h-1.5 w-1.5 rounded-full bg-emerald-500"

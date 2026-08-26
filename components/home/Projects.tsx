@@ -51,16 +51,16 @@ function ProjectEntry({ project }: { project: Project }) {
 export default function Projects() {
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20">
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-10">
-        <h2 className="font-heading text-2xl font-bold tracking-tight">
+      <div className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
           Projects
         </h2>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 leading-tight">
           <a
             href="https://github.com/chrstn-sgrr"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+            className="flex items-center gap-2 text-sm leading-tight text-zinc-400 transition-colors hover:text-zinc-100"
             aria-label="GitHub"
           >
             <Image
@@ -77,7 +77,7 @@ export default function Projects() {
             href="https://github.com/apcciesguerra"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+            className="flex items-center gap-2 text-sm leading-tight text-zinc-400 transition-colors hover:text-zinc-100"
             aria-label="School GitHub"
           >
             <Image
