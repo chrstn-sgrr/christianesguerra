@@ -99,7 +99,7 @@ export default function AboutPage() {
             Creator of Ruby on Rails, Omarchy, Co-owner of 37signals, Shopify Board Member
           </p>
           <p className="mt-6 max-w-[65ch] leading-relaxed text-zinc-300">
-            After watching lots of content from DHH, what I learned from him is to never forget to be enthusiastic in the world of Programming.
+            Controversial pick I know, but after watching lots of content from DHH, what I learned from him is to never forget to be enthusiastic in the world of Programming.
             Have some fun, be joyous, be unapologetically enthusiastic about the new,
             current, and future technology.
           </p>

@@ -1,14 +1,9 @@
 export default function Education() {
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
-          Education
-        </h2>
-        <p className="text-sm leading-tight text-zinc-500 md:text-base">
-          Computer Science Student @ Asia Pacific College
-        </p>
-      </div>
+      <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
+        Education
+      </h2>
       <div className="mt-10 space-y-8">
         <article>
           <h3 className="font-heading text-xl font-bold tracking-tight text-zinc-100">
