@@ -12,9 +12,6 @@ export default function BlogPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
       <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
-      <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-        Posts are markdown files in <code className="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">/posts</code>, parsed with gray-matter.
-      </p>
 
       {posts.length === 0 ? (
         <p className="mt-12 text-sm text-zinc-500">No posts yet.</p>

@@ -1,5 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { projects, type Project } from "@/lib/projects";
+
+type Category = Project["category"];
 
 function ProjectEntry({ project }: { project: Project }) {
   return (
@@ -49,9 +54,12 @@ function ProjectEntry({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  const [active, setActive] = useState<Category>("academic");
+  const filtered = projects.filter((p) => p.category === active);
+
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20">
-      <div className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3">
         <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
           Projects
         </h2>
@@ -92,11 +100,66 @@ export default function Projects() {
           </a>
         </div>
       </div>
-      <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectEntry key={project.title} project={project} />
+
+      <div className="mb-10 flex justify-center">
+        <div
+          role="tablist"
+          aria-label="Project category"
+          className="relative inline-flex rounded-full border border-zinc-800 bg-zinc-900 p-1"
+        >
+          <div
+            aria-hidden
+            className={`absolute inset-y-1 w-[calc(50%-4px)] rounded-full bg-zinc-100 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+              active === "personal"
+                ? "translate-x-[calc(100%+4px)]"
+                : "translate-x-0"
+            }`}
+          />
+          <button
+            role="tab"
+            aria-selected={active === "academic"}
+            onClick={() => setActive("academic")}
+            className={`relative z-10 rounded-full px-6 py-1.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-100 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
+              active === "academic"
+                ? "text-zinc-900"
+                : "text-zinc-400 hover:text-zinc-200"
+            }`}
+          >
+            Academic
+          </button>
+          <button
+            role="tab"
+            aria-selected={active === "personal"}
+            onClick={() => setActive("personal")}
+            className={`relative z-10 rounded-full px-6 py-1.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-100 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
+              active === "personal"
+                ? "text-zinc-900"
+                : "text-zinc-400 hover:text-zinc-200"
+            }`}
+          >
+            Personal
+          </button>
+        </div>
+      </div>
+
+      <div
+        key={active}
+        className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2"
+      >
+        {filtered.map((project, i) => (
+          <div
+            key={project.title}
+            style={
+              {
+                animation: `projectFade 300ms ease ${i * 60}ms both`,
+              } as React.CSSProperties
+            }
+          >
+            <ProjectEntry project={project} />
+          </div>
         ))}
       </div>
+      <style>{`@keyframes projectFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }`}</style>
     </section>
   );
 }
