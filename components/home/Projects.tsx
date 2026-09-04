@@ -9,9 +9,35 @@ type Category = Project["category"];
 function ProjectEntry({ project }: { project: Project }) {
   return (
     <article>
-      <h3 className="font-heading text-xl font-bold tracking-tight text-zinc-100">
-        {project.title}
-      </h3>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <h3 className="font-heading text-xl font-bold tracking-tight text-zinc-100">
+          {project.title}
+        </h3>
+        {project.repo && (
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Go to repository"
+            className="group relative rounded text-zinc-500 transition-colors hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-100"
+          >
+            <Image
+              src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
+              alt=""
+              width={16}
+              height={16}
+              unoptimized
+              aria-hidden
+            />
+            <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-300 opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100">
+              Project Repository
+            </span>
+          </a>
+        )}
+      </div>
+      {project.date && (
+        <p className="mt-1 text-sm text-zinc-500">{project.date}</p>
+      )}
       <p className="mt-2 max-w-[60ch] leading-relaxed text-zinc-400">
         {project.description}
       </p>
@@ -25,28 +51,16 @@ function ProjectEntry({ project }: { project: Project }) {
           </li>
         ))}
       </ul>
-      {(project.link || project.repo) && (
+      {project.link && (
         <div className="mt-4 flex gap-4">
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-100 hover:underline"
-            >
-              Visit
-            </a>
-          )}
-          {project.repo && (
-            <a
-              href={project.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-100 hover:underline"
-            >
-              Source
-            </a>
-          )}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-100 hover:underline"
+          >
+            Visit
+          </a>
         </div>
       )}
     </article>
@@ -59,46 +73,10 @@ export default function Projects() {
 
   return (
     <section className="border-t border-zinc-800/60 py-16 sm:py-20">
-      <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <div className="mb-8">
         <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight md:text-3xl">
           Projects
         </h2>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 leading-tight">
-          <a
-            href="https://github.com/chrstn-sgrr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm leading-tight text-zinc-400 transition-colors hover:text-zinc-100"
-            aria-label="GitHub"
-          >
-            <Image
-              src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
-              alt=""
-              width={16}
-              height={16}
-              unoptimized
-              aria-hidden
-            />
-            <span>GitHub</span>
-          </a>
-          <a
-            href="https://github.com/apcciesguerra"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm leading-tight text-zinc-400 transition-colors hover:text-zinc-100"
-            aria-label="School GitHub"
-          >
-            <Image
-              src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
-              alt=""
-              width={16}
-              height={16}
-              unoptimized
-              aria-hidden
-            />
-            <span>School GitHub</span>
-          </a>
-        </div>
       </div>
 
       <div className="mb-10 flex justify-center">

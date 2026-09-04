@@ -25,17 +25,22 @@ export function getAllPosts(): PostMeta[] {
 
   const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
 
-  const posts: PostMeta[] = files.map((filename) => {
-    const slug = filename.replace(/\.md$/, "");
-    const filePath = path.join(POSTS_DIR, filename);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    const { data } = matter(raw);
-    return {
-      slug,
-      title: (data.title as string) ?? slug,
-      date: parseDate(data.date),
-    };
-  });
+  const posts: PostMeta[] = files
+    .filter((filename) => {
+      const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf-8");
+      return !matter(raw).data.draft;
+    })
+    .map((filename) => {
+      const slug = filename.replace(/\.md$/, "");
+      const filePath = path.join(POSTS_DIR, filename);
+      const raw = fs.readFileSync(filePath, "utf-8");
+      const { data } = matter(raw);
+      return {
+        slug,
+        title: (data.title as string) ?? slug,
+        date: parseDate(data.date),
+      };
+    });
 
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()

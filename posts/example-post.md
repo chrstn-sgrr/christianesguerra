@@ -1,6 +1,7 @@
 ---
 title: "Example Post"
 date: "2026-08-22"
+draft: true
 ---
 
 # Hello, world

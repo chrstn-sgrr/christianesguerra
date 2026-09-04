@@ -1,5 +1,6 @@
 import WarpHeading from "@/components/WarpHeading";
 import HomeGradualBlur from "@/components/home/HomeGradualBlur";
+import Image from "next/image";
 import TechStack from "@/components/home/TechStack";
 import Projects from "@/components/home/Projects";
 import Education from "@/components/home/Education";
@@ -18,6 +19,42 @@ export default function Home() {
             Specialization in Cloud, Backend Engineering, & AI Engineering.
           </p>
           <ContactCta />
+          <div className="flex items-center justify-center gap-x-6 pt-2 text-sm leading-tight sm:text-base">
+            <a
+              href="https://github.com/apcciesguerra"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-zinc-400 transition-colors hover:text-zinc-100"
+              aria-label="School GitHub"
+            >
+              <Image
+                src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
+                alt=""
+                width={18}
+                height={18}
+                unoptimized
+                aria-hidden
+              />
+              <span>School GitHub</span>
+            </a>
+            <a
+              href="https://github.com/chrstn-sgrr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-zinc-400 transition-colors hover:text-zinc-100"
+              aria-label="GitHub"
+            >
+              <Image
+                src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github-light.svg"
+                alt=""
+                width={18}
+                height={18}
+                unoptimized
+                aria-hidden
+              />
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
       </section>
       <div className="mx-auto max-w-4xl px-6 pb-8">
