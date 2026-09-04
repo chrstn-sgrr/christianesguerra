@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { projects, type Project } from "@/lib/projects";
+import { techColorClasses } from "@/lib/techColors";
 
 type Category = Project["category"];
 
@@ -45,7 +46,7 @@ function ProjectEntry({ project }: { project: Project }) {
         {project.stack.map((tech) => (
           <li
             key={tech}
-            className="rounded-full border border-zinc-800 px-2.5 py-0.5 text-xs text-zinc-400"
+            className={`rounded-full border px-2.5 py-0.5 text-xs transition-colors ${techColorClasses(tech)}`}
           >
             {tech}
           </li>

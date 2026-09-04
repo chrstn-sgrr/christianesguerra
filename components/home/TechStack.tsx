@@ -1,3 +1,5 @@
+import { techColorClasses } from "@/lib/techColors";
+
 const groups = [
   {
     label: "Languages",
@@ -12,6 +14,7 @@ const groups = [
     items: ["AWS", "Azure", "Linux", "Git", "GitHub", "Jira"],
   },
 ];
+
 
 export default function TechStack() {
   return (
@@ -29,7 +32,7 @@ export default function TechStack() {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full border border-zinc-800 px-3.5 py-1 text-sm text-zinc-300 transition-colors hover:border-zinc-600 hover:text-zinc-100"
+                  className={`rounded-full border px-3.5 py-1 text-sm transition-colors ${techColorClasses(item)}`}
                 >
                   {item}
                 </li>

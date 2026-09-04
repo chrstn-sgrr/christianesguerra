@@ -44,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           position="right"
           items={menuItems}
           colors={["#4c1d95", "#2e1065"]}
-          accentColor="#a78bfa"
+          accentColor="#8b5cf6"
           displaySocials={false}
           displayItemNumbering={true}
         />
