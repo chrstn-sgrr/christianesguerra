@@ -40,12 +40,14 @@ export const projects: Project[] = [
       'CLI tool that grabs any file from anywhere into current directory via "thwip"',
     stack: ["Go"],
     category: "personal",
+    repo: "https://github.com/chrstn-sgrr/webshooter",
   },
   {
-    title: "a-friggin-weather-app",
+    title: "d-friggin-weather",
     description:
       "Your regular old weather forecast app because I got tired checking Google every time",
     stack: ["React", "Tailwind"],
     category: "personal",
+    repo: "https://github.com/chrstn-sgrr/d-friggin-weather",
   },
 ];
